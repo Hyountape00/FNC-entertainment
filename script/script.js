@@ -17,12 +17,11 @@ $(document).ready(function(){
     // window width 플러그인 제거
     var ww = $(window).width();
     if(ww <= 1217) {
-        console.log('great')
         skrollr.init().destroy();
+    }else {
     }
     $(window).resize(function(){
         var ww = $(window).width();
-        console.log(ww)
         if(ww == 1183) {
             window.location.reload()
             skrollr.init().destroy();
