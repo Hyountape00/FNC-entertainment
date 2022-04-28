@@ -16,12 +16,17 @@ $(document).ready(function(){
 
     // window width 플러그인 제거
     var ww = $(window).width();
-    if(ww <= 1217) {
+    var plugDestroyNum = 0;
+    if(ww <= 1217 && plugDestroyNum == 0) {
+        console.log('mob')
         skrollr.init().destroy();
+        plugDestroyNum++;
     }else {
+        
     }
     $(window).resize(function(){
         var ww = $(window).width();
+        console.log(ww)
         if(ww == 1183) {
             window.location.reload()
             skrollr.init().destroy();
@@ -70,7 +75,7 @@ $(document).ready(function(){
         var sec2Pos = $('.sec2').offset().top;
         var sec3Pos = $('.sec3').offset().top - $(window).height();
         var auditionPos = $('.audition').offset().top - 300;
-        if(myPos < sec2Pos){
+        if(myPos < sec2Pos && ww > 1183){
             // $('.sec2-container').attr('data-0', '');
             // $('.sec2-container').attr('data-4000', '');
             // $('.sec2-container').attr('style', '');
@@ -101,38 +106,7 @@ $(document).ready(function(){
             auditionScr();
         }
     }) 
-    // var introNum1 = 0;
-    // var introNum2 = 0;
-    // var introNum3 = 1888;
-    // setInterval(function(){
-    //     if(introNum1 < 7) {
-    //         $('.intro__num1').text(introNum1);
-    //         introNum1++;
-    //     }else { 
-
-    //     }
-    // }, 10)
-    // setTimeout(function(){
-    //     setInterval(function(){
-    //         if(introNum2 < 54) {
-    //             $('.intro__num2').text(introNum2);
-    //             introNum2++;
-    //         }else { 
     
-    //         }
-    //     }, 10)
-    // }, 600);
-    // setTimeout(function(){
-    //     setInterval(function(){
-    //         if(introNum3 < 2007) {
-    //             $('.intro__num3').text(introNum3);
-    //             introNum3++;
-    //         }else { 
-    
-    //         }
-    //     }, 10)
-    // }, 1500);
-
 
     // audition 스크롤 효과
     function auditionScr() {
