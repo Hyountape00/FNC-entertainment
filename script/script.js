@@ -16,13 +16,10 @@ $(document).ready(function(){
 
     // window width 플러그인 제거
     var ww = $(window).width();
-    var plugDestroyNum = 0;
-    if(ww <= 1217 && plugDestroyNum == 0) {
+    if(ww <= 1217) {
         console.log('mob')
         skrollr.init().destroy();
-        plugDestroyNum++;
     }else {
-        
     }
     $(window).resize(function(){
         var ww = $(window).width();
